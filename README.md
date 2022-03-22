@@ -1,2 +1,2 @@
 # cinema
-projet personnel sur la gestion d'un cinéma
+projet personnel  en symfony sur la gestion d'un cinéma
