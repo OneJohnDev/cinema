@@ -1,7 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajout d'un réalisateur{% endblock %}
+{% block title %}CRUD Réalisateur{% endblock %}
 
-{% block body %}
-{{form(form)}}
+{% block content %}
+<h1> Back-end: CRUD Réalisateur </h1>
+<h2>Ajouter un réalisateur</h2>
+{{form_start(form)}}
+<div>
+
+{{  form_row(
+        form.nom_realisateur, 
+        {
+            'label' : "Nom du realisateur",
+            'attr' : {
+                'placeholder' : "ex : Dupont"
+            }
+        }
+    ) 
+}}
+
+{{form_row(form.prenom_realisateur, {
+    'label' : "Prenom du réalisateur",
+    'attr' : {
+        'placeholder': "ex : Jean-Michel"
+     }
+}) }}
+{{
+    form_row(form.date_naissance, {
+            'label': "Date de naissance",
+            
+        })
+}}
+
+{{
+    form_widget(form.submit,{
+        'label' : "Ajouter"
+    })
+}}
+
+{{ form_end(form)}}
+
+</div>
+
+
+
+
+<hr>
+<h2> Liste des réalisateurs </h2>
+<table>
+    {% for realisateur in all_realisateurs %}
+    <tr>
+
+        <td>{{realisateur.prenomRealisateur}}</td>
+        <td>{{realisateur.nomRealisateur}} </td>
+        <td><a href="{{ path("app_realisateur_update",{id: realisateur.id}) }}"> Update</a></td>
+        <td><a href="{{ path("app_realisateur_delete",{id: realisateur.id}) }}"> Delete</a></td>
+        
+
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}

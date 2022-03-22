@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block content %}
+    <ul>
+        <li><a href="{{path("app_film")}}">CRUD Film</a></li>
+        <li><a href="{{path("app_genre")}}">CRUD Genre</a></li>
+        <li><a href="{{path("app_realisateur")}}">CRUD Realisateur</a></li>
+    <ul>
+{% endblock %}

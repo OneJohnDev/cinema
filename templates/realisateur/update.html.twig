@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Réalisateur{% endblock %}
+
+
+{% block content %}
+<h2>Mise à jour d'un réalisateur</h2>
+
+{{form_start(form_update)}}
+{{  form_row(
+        form_update.id,
+        {
+            'label': "ID réalisateur",
+            'value' :  realisateur.id,
+            'attr' : {
+                'placeholder' : "Ex : 124",
+                'disabled' : true
+            }
+        }
+    )
+}}
+{{  form_row(
+        form_update.nom_realisateur,
+        {
+            'label': "Nom réalisateur",
+            'attr' : {
+                'placeholder' : "Ex: Dupont"
+            }
+        }
+    )
+}}
+{{  form_row(
+        form_update.prenom_realisateur,
+        {
+            'label': "Prénom réalisateur",
+            'attr' : {
+                'placeholder': "ex : Jean-Michel"
+            }
+        }
+    )
+}}
+{{  form_row(
+        form_update.date_naissance,
+        {
+            'label': "Date de naissance du réalisateur"
+        }
+    )
+}}
+{{  form_widget(
+        form_update.submit,
+        {
+            'label': "Update"
+        }
+    )
+}}
+
+{% endblock %}

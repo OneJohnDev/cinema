@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Film{% endblock %}
+
+{% block content %}
+<h1> Update Film </h1>
+{{ form_start(form_update) }}
+    {{ form_row(form_update.titre_film)}}
+    {{ form_row(form_update.synopsis)}}
+    {{ form_row(form_update.date_sortie)}}
+    {{ form_row(form_update.Realisateur)}}
+    {{ form_row(form_update.Genre)}}
+    {{ form_row(form_update.submit,{
+        'label' : "Mettre à jour",
+        })
+    }}
+{{ form_end(form_update) }}
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'cinema/index.html.twig' %}
+
+{% block title %}Liste des films d'un réalisateur {% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+    <!-- Page Content -->
+
+
+            <div class="col-md-9">
+				
+				<h2>Les films de {{ realisateur.nomRealisateur }}</h2>
+				
+				<br />
+                {% for film in all_films %}
+				<div class="thumbnail">
+                    <div class="caption-full">
+                        <h4 class="pull-right">{{film.genre.nomGenre}}</h4>
+                        <h4>{{film.titreFilm}}</h4>
+                        <p> {{film.synopsis}}</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">sorti le 26/05/1982(RENDRE DYNAMIQUE)</p>
+                        <p>Réalisé par : <a href="{{ path("app_cinema_realisateur", {id: film.Realisateur.id} ) }}">{{film.realisateur.nomRealisateur}}</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+				
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+
+
+    </div>
+{% endblock %}

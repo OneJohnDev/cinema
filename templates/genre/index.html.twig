@@ -1,7 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GenreController!{% endblock %}
-
-{% block body %}
-
+{% block title %}CRUD Genre
 {% endblock %}
+
+{% block content %}
+<h1> Back-end: CRUD Genre </h1>
+<h2>Ajouter un genre</h2>
+{{form_start(form)}}
+<div>
+	{{ form_row(form.nom_genre,{
+        'label': "Genre",
+        'attr' : {
+            'placeholder' : "ex : Western"
+        }
+    })
+}}
+{{ form_widget(form.submit,{
+    'label' : "Ajouter"
+    })
+}}
+<div>
+{{form_end(form)}}
+<hr>
+<h2> Liste des genre </h2>
+<table>
+    {% for genre in all_genres %}
+    <tr>
+
+        <td>{{genre.nomGenre}}</td>
+        
+        <td><a href="{{ path("app_genre_update",{id: genre.id}) }}"> Update</a></td>
+        <td><a href="{{ path("app_genre_delete",{id: genre.id}) }}"> Delete</a></td>
+        
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

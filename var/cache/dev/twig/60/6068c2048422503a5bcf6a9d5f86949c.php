@@ -29,6 +29,9 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'navbar' => [$this, 'block_navbar'],
+            'sideMenu' => [$this, 'block_sideMenu'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -58,18 +61,17 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
         echo "\" rel=\"stylesheet\">
     </head>
     <body>
-        ";
+    ";
         // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 14
-        echo "    
-    </body>
+        // line 57
+        echo "    </body>
     <script src=\"";
-        // line 16
+        // line 58
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 17
+        // line 59
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/boostrap.min.js"), "html", null, true);
         echo "\" ></script>
 </html>";
@@ -99,7 +101,101 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 12
-        echo "        
+        echo "        ";
+        $this->displayBlock('navbar', $context, $blocks);
+        // line 40
+        echo "        ";
+        $this->displayBlock('sideMenu', $context, $blocks);
+        // line 42
+        echo "        ";
+        $this->displayBlock('content', $context, $blocks);
+        // line 56
+        echo "    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 12
+    public function block_navbar($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "navbar"));
+
+        // line 13
+        echo "        <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">
+        <div class=\"container\">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class=\"navbar-header\">
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"http://127.0.0.1:8000/\">Symfony</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+
+                    <li>
+                        <a href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cinema");
+        echo "\">Cinéma</a>
+                    </li>
+                    <li>
+                        <a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
+        echo "\">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 40
+    public function block_sideMenu($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sideMenu"));
+
+        // line 41
+        echo "        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 42
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 43
+        echo "        <div class=\"container\">
+
+        <div class=\"row\">
+
+            <div class=\"col-md-12\">
+                <h1>Accueil</h1>
+                <p>Bienvenue sur mon site Symfony</p>
+            </div>
+
+        </div>
+
+        </div>
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -118,7 +214,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  95 => 11,  82 => 5,  73 => 17,  69 => 16,  65 => 14,  63 => 11,  57 => 8,  53 => 7,  48 => 5,  42 => 1,);
+        return array (  187 => 43,  180 => 42,  173 => 41,  166 => 40,  150 => 31,  144 => 28,  127 => 13,  120 => 12,  113 => 56,  110 => 42,  107 => 40,  104 => 12,  97 => 11,  84 => 5,  75 => 59,  71 => 58,  68 => 57,  66 => 11,  60 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -133,10 +229,52 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
         <link href=\"{{ asset('assets/css/shop-item.css') }}\" rel=\"stylesheet\">
     </head>
     <body>
-        {% block body %}
-        
+    {% block body %}
+        {% block navbar %}
+        <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">
+        <div class=\"container\">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class=\"navbar-header\">
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"http://127.0.0.1:8000/\">Symfony</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+
+                    <li>
+                        <a href=\"{{path(\"app_cinema\")}}\">Cinéma</a>
+                    </li>
+                    <li>
+                        <a href=\"{{path(\"app_admin\")}}\">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
         {% endblock %}
-    
+        {% block sideMenu %}
+        {% endblock %}
+        {% block content %}
+        <div class=\"container\">
+
+        <div class=\"row\">
+
+            <div class=\"col-md-12\">
+                <h1>Accueil</h1>
+                <p>Bienvenue sur mon site Symfony</p>
+            </div>
+
+        </div>
+
+        </div>
+        {% endblock %}
+    {% endblock %}
     </body>
     <script src=\"{{ asset('assets/js/jquery.js') }}\" ></script>
     <script src=\"{{ asset('assets/js/boostrap.min.js') }}\" ></script>

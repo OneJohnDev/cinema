@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Genre{% endblock %}
+
+{% block content %}
+<h1> Update Genre </h1>
+{{ form_start(form_update) }}
+{{ 
+    form_row(form_update.nom_genre,{
+        'label': "genre"
+        }
+    )
+}}
+{{ 
+    form_widget(form_update.submit,{
+        'label': "Update"
+        }
+    )
+}}
+{{ form_end(form_update) }}
+
+{% endblock %}

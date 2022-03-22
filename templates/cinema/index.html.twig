@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Films{% endblock %}
+
+{% block sideMenu %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">Cinéma</p>
+                <div class="list-group">
+                    <a href="{{path("app_cinema")}}" class="list-group-item active">Films</a>
+                    <a href="{{path("app_cinema_liste_realisateurs")}}" class="list-group-item">Réalisateurs</a>
+                </div>
+            </div>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    
+
+
+            <div class="col-md-9">
+			
+				<h2>Liste des films</h2>
+				
+				<br />
+                {% for film in all_films %}
+				<div class="thumbnail">
+                    <div class="caption-full">
+                        <h4 class="pull-right">{{film.Genre.nomGenre}}</h4>
+                        <h4>{{film.titreFilm}}</h4>
+                        <p> {{film.synopsis}}</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">sorti le 20/10/1993(rendre dynamique)</p>
+                        <p>Réalisé par : <a href="{{ path("app_cinema_realisateur", {id: film.Realisateur.id} ) }}">{{film.Realisateur.nomRealisateur}}</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+				
+			
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
