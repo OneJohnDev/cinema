@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RealisateurRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -102,5 +103,13 @@ class Realisateur
         }
 
         return $this;
+    }
+
+    public function getAge(): ?int
+    {
+        $dateBirth = $this->date_naissance;
+        $today = new DateTime();
+        $diff = $today->diff($dateBirth);
+        return $diff->y;
     }
 }

@@ -64,14 +64,14 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
     ";
         // line 11
         $this->displayBlock('body', $context, $blocks);
-        // line 57
+        // line 58
         echo "    </body>
     <script src=\"";
-        // line 58
+        // line 59
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.js"), "html", null, true);
         echo "\" ></script>
     <script src=\"";
-        // line 59
+        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/boostrap.min.js"), "html", null, true);
         echo "\" ></script>
 </html>";
@@ -109,7 +109,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
         // line 42
         echo "        ";
         $this->displayBlock('content', $context, $blocks);
-        // line 56
+        // line 57
         echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -132,7 +132,10 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button>
-                <a class=\"navbar-brand\" href=\"http://127.0.0.1:8000/\">Symfony</a>
+                <a class=\"navbar-brand\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
+        echo "\">Symfony</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
@@ -190,6 +193,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
 
             <div class=\"col-md-12\">
                 <h1>Accueil</h1>
+                
                 <p>Bienvenue sur mon site Symfony</p>
             </div>
 
@@ -214,7 +218,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  187 => 43,  180 => 42,  173 => 41,  166 => 40,  150 => 31,  144 => 28,  127 => 13,  120 => 12,  113 => 56,  110 => 42,  107 => 40,  104 => 12,  97 => 11,  84 => 5,  75 => 59,  71 => 58,  68 => 57,  66 => 11,  60 => 8,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  190 => 43,  183 => 42,  176 => 41,  169 => 40,  153 => 31,  147 => 28,  137 => 21,  127 => 13,  120 => 12,  113 => 57,  110 => 42,  107 => 40,  104 => 12,  97 => 11,  84 => 5,  75 => 60,  71 => 59,  68 => 58,  66 => 11,  60 => 8,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -239,7 +243,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button>
-                <a class=\"navbar-brand\" href=\"http://127.0.0.1:8000/\">Symfony</a>
+                <a class=\"navbar-brand\" href=\"{{path(\"app_index\")}}\">Symfony</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
@@ -267,6 +271,7 @@ class __TwigTemplate_b107c29fa33782c6b18512175fb051e1 extends Template
 
             <div class=\"col-md-12\">
                 <h1>Accueil</h1>
+                
                 <p>Bienvenue sur mon site Symfony</p>
             </div>
 

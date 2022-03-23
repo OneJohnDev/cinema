@@ -35,7 +35,7 @@
                         <p> {{film.synopsis}}</p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right">sorti le 20/10/1993(rendre dynamique)</p>
+                        <p class="pull-right">Sortie le {{film.dateSortie|date("m/d/Y")}}</p>
                         <p>Réalisé par : <a href="{{ path("app_cinema_realisateur", {id: film.Realisateur.id} ) }}">{{film.Realisateur.nomRealisateur}}</a></p>
                     </div>
                 </div>
